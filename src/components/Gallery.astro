@@ -1,0 +1,236 @@
+---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
+---
+
+<section>
+  <!-- Swiper -->
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <span class="slide-title">Montaña</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <span class="slide-title">Bosque</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <span class="slide-title">Lago</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="/building.jpg" />
+        <span class="slide-title">Building</span>
+      </div>
+       <div class="swiper-slide">
+        <img src="/beach.webp" />
+        <span class="slide-title">Playa</span>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <span class="slide-title-thumb">Montaña</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <span class="slide-title-thumb">Bosque</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <span class="slide-title-thumb">Lago</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="/building.jpg" />
+        <span class="slide-title-thumb">Building</span>
+      </div>
+      <div class="swiper-slide">
+        <img src="/beach.webp" />
+        <span class="slide-title-thumb">Playa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    position: relative;
+    background: #000;
+    font-family:
+      Helvetica Neue,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 5px 0;
+  }
+
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: red;
+  }
+  .slide-title {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    width: 100%;
+    color: #fff;
+    font-size: 2rem;
+    padding: 5px 5px;
+    text-align: left;
+    z-index: 2;
+  }
+  .slide-title-thumb {
+    position: absolute;
+    bottom: 5px;
+    left: 8px;
+    width: 90%;
+    color: #fff;
+    background: rgba(0,0,0,0.4);
+    font-size: 0.9rem;
+    padding: 2px 4px;
+    text-align: left;
+    z-index: 2;
+    border-radius: 3px;
+  }
+  .mySwiper .swiper-slide {
+    position: relative;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Thumbs, FreeMode } from "swiper/modules";
+
+  function getBrightness(img) {
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let r = 0, g = 0, b = 0, count = 0;
+    for (let i = 0; i < data.length; i += 4) {
+      r += data[i];
+      g += data[i+1];
+      b += data[i+2];
+      count++;
+    }
+    return (r * 299 + g * 587 + b * 114) / (1000 * count);
+  }
+
+  function emitBrightness() {
+    const activeImg = document.querySelector('.mySwiper2 .swiper-slide-active img');
+    if (!activeImg) return;
+    function send() {
+      let brightness = 255;
+      try {
+        brightness = getBrightness(activeImg);
+        console.log("Brillo calculado:", brightness); // <-- Depuración
+      } catch (e) {
+        console.warn("No se pudo calcular el brillo (CORS):", e);
+      }
+      window.dispatchEvent(new CustomEvent('slider-brightness', { detail: { brightness } }));
+    }
+    if (activeImg.complete) {
+      send();
+    } else {
+      activeImg.onload = send;
+    }
+  }
+
+  const swiper = new Swiper(".mySwiper", {
+    spaceBetween: 5,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+
+  const swiper2 = new Swiper(".mySwiper2", {
+    modules: [Pagination, Navigation, Thumbs, FreeMode],
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+    on: {
+      slideChange: emitBrightness
+    }
+  });
+
+  window.addEventListener('DOMContentLoaded', emitBrightness);
+</script>

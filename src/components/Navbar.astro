@@ -1,0 +1,165 @@
+<nav>
+  <div class="logo"><img src="" alt="" />logo</div>
+  <div class="nav-links">
+    <ul class="menu">
+      <li>Home</li>
+      <li>Projects</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <div class="socials">
+      <a href="" target="_blank"><img src="" alt="" />Inst</a>
+      <a href="" target="_blank"><img src="" alt="" />Whstapp</a>
+    </div>
+  </div>
+  <div class="menu-toggle">
+      <svg
+        id="toggle-button"
+        xmlns="http://www.w3.org/2000/svg"
+        height="30"
+        width="30"
+        viewBox="0 0 640 640"
+        ><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path
+          d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"
+        ></path>
+        </svg>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+    background: transparent;
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    transition: color 0.3s;
+    box-sizing: border-box;
+  }
+  .nav-links {
+    display: flex;
+    gap: 50px;
+    position: static;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  nav ul li:hover {
+    color: #ff6347;
+  }
+  .socials {
+    display: flex;
+    gap: 15px;
+  }
+  .socials a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+  }
+  .navbar-light {
+    color: #fff !important;
+    text-shadow: 0 1px 4px #000;
+  }
+  .navbar-dark {
+    color: #222 !important;
+    text-shadow: 0 1px 4px #fff;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: none;
+      box-sizing: border-box;
+    }
+    .nav-links {
+      min-height: 500px;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      margin-top: 50px;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      opacity: 0.95;
+      transition: all 0.3s ease-in-out;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      gap: 50px;
+      align-items: center;
+      color: #333;
+    }
+    .navbar-light {
+      color: #fff !important;
+      text-shadow: 0 1px 4px #000;
+    }
+    .navbar-dark {
+      color: #222 !important;
+      text-shadow: 0 1px 4px #fff;
+    }
+    .socials {
+      justify-content: center;
+      width: 100%;
+    }
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .toggle-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+  }
+</style>
+<script>
+  window.addEventListener("slider-brightness", (e) => {
+    const nav = document.querySelector("nav");
+    if (!nav) return;
+    const brightness = e.detail.brightness;
+    if (brightness < 128) {
+      nav.classList.add("navbar-dark");
+      nav.classList.remove("navbar-light");
+    } else {
+      nav.classList.add("navbar-light");
+      nav.classList.remove("navbar-dark");
+    }
+  });
+  const btnMenu = document.getElementById("toggle-button")
+  btnMenu.addEventListener("click", () => {
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+    }
+  });
+</script>

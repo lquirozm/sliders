@@ -1,7 +1,105 @@
-<section id="Servicios" class="services-section">
-    <div>
-        <h2>SERVICIOS</h2>
-    </div>
-    <div></div>
+---
+import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
+---
 
+<section id="Servicios" class="services-section">
+  <article>
+    <div class="section-left">
+      <h2 class="title">SERVICIOS</h2>
+      <div class="line"></div>
+      <div class="services-text">
+        <h3>SERVICIOS PREVIOS A LA CONSTRUCCIÓN</h3>
+        <p>
+          Nos tomamos nuestro tiempo en la planificación inicial antes de que
+          comience cualquier construcción, para equilibrar todas las cuestiones
+          financieras y de eficiencia de antemano.
+        </p>
+        <br>
+        <h3>GESTIÓN DE LA CONSTRUCCIÓN</h3>
+        <p>
+          La gestión de proyectos de construcción es fundamental. Estamos
+          utilizando los métodos de ciclos de vida más eficientes en tiempo e
+          iteraciones para eso.
+        </p>
+        <br>
+        <h3>MODELADO DE INFORMACIÓN DE CONSTRUCCIÓN</h3>
+        <p>
+          Muchas veces la esencia física y funcional de cualquier proyecto de
+          construcción debe representarse digitalmente, en un formato de modelo
+          3D.
+        </p>
+      </div>
+    </div>
+    <div class="services-image" >
+        <img src={imgHorizonte1.src} alt="Proyecto Casa Horizonte" />
+    </div>
+  </article>
 </section>
+<style>
+  .services-section {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px;
+  }
+    .section-left {
+        width: 100%;
+    }
+  .title {
+    font-family: var(--cocogoose-light);
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .line{
+        height: 4px;
+        background: var(--light-blue);
+        margin: 0px 0 40px -70px;
+    }
+  .services-text {
+    font-family: var(--helvetica-regular);
+  }
+  .services-image{
+    width: 100%;
+    height: 420px;
+    margin-top: 20px;
+    overflow: hidden;
+    }
+    .services-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+ 
+  @media (min-width: 820px) {
+    article {
+      flex-direction: row;
+      padding: 100px 0px 50px 100px;
+      gap: 80px;
+    }
+    .section-left {
+      width: 50%;
+    }
+    .services-image {
+      width: 50%;
+      height: 700px;
+      
+    }
+    .services-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .line{
+        height: 4px;
+        background: var(--light-blue);
+        margin: 0px 0 40px -70px;
+    }
+  }
+</style>

@@ -4,6 +4,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import imgAbuila1 from "../assets/proyectos/1.CASA_ABULIA/img1.jpg"
+import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg"
+import imgLienzo1 from "../assets/proyectos/3.CASA_LIENZO/img1.jpg"
+import imgCasaP2 from "../assets/proyectos/4.CASA_P/img2.jpg"
+import imgCasaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg"
 ---
 
 <section>
@@ -11,24 +16,24 @@ import "swiper/css/thumbs";
   <div class="swiper mySwiper2">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        <span class="slide-title">Montaña</span>
+        <img src={imgAbuila1.src} />
+        <span class="slide-title">CASA ABUILA</span>
       </div>
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        <span class="slide-title">Bosque</span>
+        <img src={imgHorizonte1.src} />
+        <span class="slide-title">CASA HORIZONTE</span>
       </div>
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        <span class="slide-title">Lago</span>
+        <img src={imgLienzo1.src} />
+        <span class="slide-title">CASA LIENZO</span>
       </div>
       <div class="swiper-slide">
-        <img src="/building.jpg" />
-        <span class="slide-title">Building</span>
+        <img src={imgCasaP2.src} />
+        <span class="slide-title">CASA P</span>
       </div>
        <div class="swiper-slide">
-        <img src="/beach.webp" />
-        <span class="slide-title">Playa</span>
+        <img src={imgCasaSol1.src} />
+        <span class="slide-title">CASA SOL</span>
       </div>
     </div>
     <div class="swiper-button-next"></div>
@@ -38,24 +43,24 @@ import "swiper/css/thumbs";
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        <span class="slide-title-thumb">Montaña</span>
+        <img src={imgAbuila1.src} />
+        <span class="slide-title-thumb">CASA ABUILA</span>
       </div>
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        <span class="slide-title-thumb">Bosque</span>
+        <img src={imgHorizonte1.src} />
+        <span class="slide-title-thumb">CASA HORIZONTE</span>
       </div>
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        <span class="slide-title-thumb">Lago</span>
+        <img src={imgLienzo1.src} />
+        <span class="slide-title-thumb">CASA LIENZO</span>
       </div>
       <div class="swiper-slide">
-        <img src="/building.jpg" />
-        <span class="slide-title-thumb">Building</span>
+        <img src={imgCasaP2.src} />
+        <span class="slide-title-thumb">CASA P</span>
       </div>
       <div class="swiper-slide">
-        <img src="/beach.webp" />
-        <span class="slide-title-thumb">Playa</span>
+        <img src={imgCasaSol1.src} />
+        <span class="slide-title-thumb">CASA SOL</span>
       </div>
     </div>
   </div>
@@ -65,12 +70,6 @@ import "swiper/css/thumbs";
   section {
     position: relative;
     background: #000;
-    font-family:
-      Helvetica Neue,
-      Helvetica,
-      Arial,
-      sans-serif;
-    font-size: 14px;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -117,7 +116,7 @@ import "swiper/css/thumbs";
   .mySwiper {
     height: 20%;
     box-sizing: border-box;
-    padding: 5px 0;
+    padding: 1px 0 0 0;
   }
 
   .mySwiper .swiper-slide {
@@ -146,7 +145,8 @@ import "swiper/css/thumbs";
     left: 40px;
     width: 100%;
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: var(--cocogoose-light);
     padding: 5px 5px;
     text-align: left;
     z-index: 2;
@@ -159,6 +159,7 @@ import "swiper/css/thumbs";
     color: #fff;
     background: rgba(0,0,0,0.4);
     font-size: 0.9rem;
+    font-family: var(--cocogoose-light);
     padding: 2px 4px;
     text-align: left;
     z-index: 2;
@@ -170,7 +171,7 @@ import "swiper/css/thumbs";
 </style>
 
 <script>
-  import Swiper from "swiper";
+  import Swiper from "swiper"
   import { Navigation, Pagination, Thumbs, FreeMode } from "swiper/modules";
 
   function getBrightness(img) {
@@ -211,7 +212,7 @@ import "swiper/css/thumbs";
   }
 
   const swiper = new Swiper(".mySwiper", {
-    spaceBetween: 5,
+    spaceBetween: 3,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,

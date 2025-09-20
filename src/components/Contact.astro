@@ -1,7 +1,8 @@
 <section class="main-section" id="Contacto">
     <section class="contact_form">
         <article class="contact">
-            <h3>CONTACTANOS</h3>
+            <h3>CONTACTO</h3>
+            <div class="line"></div>
             <p>Tel. +56 938967493</p>
             <p>Villanelo N° 180 Viña del Mar - CHILE.</p>
             <p>Ventas@dhisoingenieriayconstruccion.com</p>
@@ -55,7 +56,7 @@
             <input
                 class="input-form"
                 type="email"
-                placeholder="e-mail"
+                placeholder="E-mail"
                 name="email"
                 required
             />
@@ -66,16 +67,25 @@
             <input type="submit" value="Enviar" />
         </form>
     </section>
+    <div class="logo">
+        <img src="/images/logo_white.png" alt="">
+    </div>
 </section>
 
 <style>
     .main-section {
         width: 100%;
         height: auto;
-        padding: 25px 20px;
+        padding: 25px 30px;
         background: var(--light-blue);
-        box-sizing: border-box;
+        box-sizing: border-box; 
        
+    }
+     .line{
+        height: 4px;
+        background: #fff;
+        margin: 0px 0 40px -70px;
+        width: 100%;
     }
     .contact_form {
         margin: 0 auto;
@@ -95,21 +105,19 @@
     .contact_form .contact h3 {
         margin-bottom: 10px;
         font-family: var(--cocogoose-light);
-        font-size: 2.4rem;
-        font-weight: 500;
+        font-size: 3rem;
+        font-weight: 700;
         line-height: 2.6rem;
         color: #fff;
     }
     .contact_form .contact p {
         font-family: var(--helvetica-regular);
-        font-size: 1.2rem;
-        line-height: 2.0rem;
+        font-size: 1.1rem;
+        line-height: 1.1rem;
         color: #fff;
+        margin: 5px;
     }
-    .contact_form .contact p:first-of-type {
-        font-size: 2.3rem;
-        line-height: 2.7rem;
-    }
+   
     .contact-media {
         margin-top: 10px;
         width: 100%;
@@ -142,13 +150,13 @@
         border-radius: 3px;
         font-family: var(--helvetica-regular);
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: var(--dark-blue);
     }
     form .input-form::placeholder {
         font-family: var(--helvetica-regular);
         font-weight: 500;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #c5c5c5;
     }
     form textarea {
@@ -158,7 +166,7 @@
         border-radius: 3px;
         font-family: var(--helvetica-regular);
         font-weight: 500;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         color: var(--dark-blue);
         resize: none;
     }
@@ -168,12 +176,13 @@
     form input[type="submit"] {
         cursor: pointer;
         border: none;
+        border-radius: 5px;
         width: 100%;
         max-width: 170px;
-        padding: 17px 54px;
+        padding: 12px 20px;
         background-color: var(--red);
         font-family: var(--helvetica-regular);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 500;
         color: #fff;
         transition: all 0.3s ease-in-out;
@@ -181,21 +190,34 @@
     form input[type="submit"]:hover {
         background-color: #910c0c;
     }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .logo img {
+      height: 132px;
+    }
 
     @media only screen and (min-width: 1025px) {
         .main-section {
-            padding: 80px 80px 260px;
+            padding: 80px 80px 60px;
+            margin-top: 200px;
         }
-        header {
-            margin-bottom: 176px;
+        .line{
+            height: 4px;
+            background: #fff;
+            margin: 0px 0 40px -100px;
+            width: 120%;
         }
-        header h2 {
-            text-align: center;
-        }
+      
         .contact_form {
+            width: 100%;
             max-width: 1020px;
             flex-direction: row;
             justify-content: space-between;
+            gap: 50px; 
         }
         .contact_form .contact {
             max-width: 360px;
@@ -204,5 +226,53 @@
             max-width: 610px;
             align-items: flex-start;
         }
+        form .input-form {
+        padding: 10px 10px;
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        font-family: var(--helvetica-regular);
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: var(--dark-blue);
     }
+    form .input-form::placeholder {
+        font-family: var(--helvetica-regular);
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #c5c5c5;
+    }
+     form textarea {
+        width: 100%;
+        height: 120px;
+        padding: 8px 10px;
+        border-radius: 3px;
+        font-family: var(--helvetica-regular);
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: var(--dark-blue);
+        resize: none;
+    }
+    form textarea::placeholder {
+        color: #c5c5c5;
+    }
+    form input[type="submit"] {
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 150px;
+        padding: 12px 20px;
+        background-color: var(--red);
+        font-family: var(--helvetica-regular);
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+    .logo img {
+      height: 150px;
+      margin-top: 60px;
+    }
+}
 </style>

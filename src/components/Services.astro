@@ -38,7 +38,6 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
 <style>
   .services-section {
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
     margin-bottom: 100px;
   }
@@ -49,8 +48,8 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
     padding: 50px 20px;
     gap: 20px;
   }
-    .section-left {
-        width: 100%;
+  .section-left {
+    width: 100%;
     }
   .title {
     font-family: var(--cocogoose-light);
@@ -79,6 +78,9 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
     }
  
   @media (min-width: 820px) {
+    .services-section {
+        margin-bottom: 100px;
+    }
     article {
       flex-direction: row;
       padding: 100px 0px 50px 100px;
@@ -90,6 +92,7 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
     .services-image {
       width: 50%;
       height: 700px;
+      margin-bottom: 0;
       
     }
     .services-image img {
@@ -101,6 +104,10 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
         height: 4px;
         background: var(--light-blue);
         margin: 0px 0 40px -70px;
+        width: 80%;
+    }
+    .title {
+      font-size: 3rem;
     }
   }
 </style>

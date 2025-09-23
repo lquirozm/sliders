@@ -1,30 +1,172 @@
+---
+import "photoswipe/style.css";
+import casaAbuila1 from "../assets/proyectos/1.CASA_ABULIA/img1.jpg";
+import casaAbuila2 from "../assets/proyectos/1.CASA_ABULIA/img2.jpg";
+import casaAbuila3 from "../assets/proyectos/1.CASA_ABULIA/img3.jpg";
+// Casa Horizonte
+import casaHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
+import casaHorizonte2 from "../assets/proyectos/2.CASA_HORIZONTE/img2.jpg";
+import casaHorizonte3 from "../assets/proyectos/2.CASA_HORIZONTE/img3.jpg";
+// Casa Lienzo
+import casaLienzo1 from "../assets/proyectos/3.CASA_LIENZO/img1.jpg";
+import casaLienzo2 from "../assets/proyectos/3.CASA_LIENZO/img2.png";
+import casaLienzo3 from "../assets/proyectos/3.CASA_LIENZO/img3.png";
+// Casa P
+import casaP1 from "../assets/proyectos/4.CASA_P/img1.jpg";
+import casaP2 from "../assets/proyectos/4.CASA_P/img2.jpg";
+import casaP3 from "../assets/proyectos/4.CASA_P/img3.jpg";
+// Casa Sol
+import casaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg";
+import casaSol2 from "../assets/proyectos/5.CASA_SOL/img2.jpg";
+import casaSol3 from "../assets/proyectos/5.CASA_SOL/img3.jpg";
+import casaSol4 from "../assets/proyectos/5.CASA_SOL/img4.jpg";
+import casaSol5 from "../assets/proyectos/5.CASA_SOL/img5.jpg";
+import casaSol6 from "../assets/proyectos/5.CASA_SOL/img6.jpg";
+---
+
 <section>
-    <h2>PROYECTOS</h2>
-    <div class="line"></div>
-    <div>
+  <h2>PROYECTOS</h2>
+  <div class="line"></div>
+
+  <div id="casa-abulia-gallery" class="gallery">
+    <h3>Casa Abuila</h3>
+    <a href={casaAbuila1.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaAbuila1.src} alt="Proyecto Casa Abuila" />
+    </a>
+    <a href={casaAbuila2.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaAbuila2.src} alt="Proyecto Casa Abuila" />
+    </a>
+    <a href={casaAbuila3.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaAbuila3.src} alt="Proyecto Casa Abuila" />
+    </a>
+  </div>
+   <!-- Galería 2 -->
+  <div id="casa-horizonte-gallery" class="gallery">
+    <h3>Casa Horizonte</h3>
+    <a href={casaHorizonte1.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaHorizonte1.src} alt="Casa Horizonte" />
+    </a>
+    <a href={casaHorizonte2.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaHorizonte2.src} alt="Casa Horizonte" />
+    </a>
+    <a href={casaHorizonte3.src} data-pswp-width="1200" data-pswp-height="800">
+      <img src={casaHorizonte3.src} alt="Casa Horizonte" />
+    </a>
+  </div>
+  <!-- Galería 3 -->
+    <div id="casa-lienzo-gallery" class="gallery">
+        <h3>Casa Lienzo</h3>
+        <a href={casaLienzo1.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaLienzo1.src} alt="Casa Lienzo" />
+        </a>
+        <a href={casaLienzo2.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaLienzo2.src} alt="Casa Lienzo" />
+        </a>
+        <a href={casaLienzo3.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaLienzo3.src} alt="Casa Lienzo" />
+        </a>
+    </div>
+    <!-- Galería 4 -->
+    <div id="casa-p-gallery" class="gallery">
+        <h3>Casa P</h3>
+        <a href={casaP1.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaP1.src} alt="Casa P" />
+        </a>
+        <a href={casaP2.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaP2.src} alt="Casa P" />
+        </a>
+        <a href={casaP3.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaP3.src} alt="Casa P" />
+        </a>
+    </div>
+    <!-- Galería 5 -->
+    <div class="gallery" id="casa-sol-gallery">
+        <h3>Casa Sol</h3>
+        <a href={casaSol1.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol1.src} alt="Casa Sol" />
+        </a>
+        <a href={casaSol2.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol2.src} alt="Casa Sol" />
+        </a>
+        <a href={casaSol3.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol3.src} alt="Casa Sol" />
+        </a>
+        <a href={casaSol4.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol4.src} alt="Casa Sol" />
+        </a>
+        <a href={casaSol5.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol5.src} alt="Casa Sol" />
+        </a>
+        <a href={casaSol6.src} data-pswp-width="1200" data-pswp-height="800">
+        <img src={casaSol6.src} alt="Casa Sol" />
+        </a>
 
     </div>
-       
 </section>
+
 <style>
-    section {
-        padding: 50px 20px;
-        box-sizing: border-box;
-        position: absolute;
-        top: 100px;
-        width: 100%;
-        }
-    
-    h2 {
-        font-family: var(--cocogoose-light);
-        font-size: 2.5rem;
-        margin: 0;
-        color: var(--light-blue);
-    }
-    .line{
-        height: 4px;
-        background: var(--light-blue);
-        margin: 0px 0 40px -10px;
-        width: 100%;
-    }
+  section {
+    padding: 50px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+  }
+
+  h2 {
+    font-family: var(--cocogoose-light);
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--light-blue);
+  }
+
+  h3 {
+    font-family: var(--cocogoose-light);
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--light-blue);
+  }
+
+  .line {
+    height: 4px;
+    background: var(--light-blue);
+    margin: 0px 0 40px -10px;
+    width: 100%;
+  }
+
+ .gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .gallery img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.02);
+  }
 </style>
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+  // Inicializar todas las galerías
+  ["#casa-abulia-gallery", "#casa-horizonte-gallery", "#casa-pacifico-gallery", "#casa-bosque-gallery", "#casa-andes-gallery"].forEach(
+    (selector) => {
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: selector,
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+      });
+      lightbox.init();
+    }
+  );
+
+</script>

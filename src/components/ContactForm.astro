@@ -81,7 +81,12 @@
     .socials-media a svg {
         width: 35px;
         height: 35px;
+        stroke: #fff;
+    }
+    .socials-media a svg:hover {
         stroke: var(--red);
+        transition: stroke 0.3s ease;
+
     }
     form{
         display: flex;
@@ -133,7 +138,7 @@
         }
         .contact-section {
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
             gap: 30px;
             width: 100%;

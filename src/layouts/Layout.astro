@@ -5,14 +5,14 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/images/logoisotipo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>DHISO - Ingeniería y Construcción</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	@font-face {
 		font-family: 'Cocogoose Light';
 		src: url('/fonts/cocogoose.ttf');
@@ -40,4 +40,8 @@
 		height: 100%;
 		scroll-behavior: smooth;
 	}
+	.swal2-popup {
+  		font-family: var(--helvetica-regular) !important;
+	}
+
 </style>

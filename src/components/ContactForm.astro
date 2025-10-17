@@ -22,8 +22,8 @@
             </div>
       </div>
       <form id="emailForm" method="POST">
-            <input class="input-form" type="text" placeholder="Nombre Completo" name="name" required />
-            <input class="input-form" type="email" placeholder="e-mail" name="email" required />
+            <input class="input-form" type="text" placeholder="Nombre completo" name="name" required />
+            <input class="input-form" type="email" placeholder="E-mail" name="email" required />
             <textarea class="input-form" placeholder="Mensaje" name="message" required></textarea>
             <button type="submit">Enviar</button>
       </form>
@@ -105,7 +105,7 @@
         border-radius: 5px;
     }
     form textarea {
-        height: 120px;
+        height: 150px;
         resize: none;
     }
     form button {
@@ -180,6 +180,8 @@
 <script>
 import Swal from "sweetalert2";
 
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+
 const form = document.getElementById("emailForm") as HTMLFormElement;
 
 form?.addEventListener("submit", async (e) => {
@@ -188,25 +190,39 @@ form?.addEventListener("submit", async (e) => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    try {
-        const res = await fetch("https://dhiso-backend.onrender.com/emails", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+    // Mostrar indicador de carga
+    Swal.fire({
+        title: 'Enviando...',
+        text: 'Por favor espera',
+        allowOutsideClick: false,
+        didOpen: () => {
+            Swal.showLoading();
+        }
     });
+
+    try {
+        const res = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
 
         const result = await res.json();
 
-        if (result.success) {
-            Swal.fire({
+        // Cerrar el loading
+        Swal.close();
+
+        if (res.ok && result.success) {
+            await Swal.fire({
                 title: "¡Mensaje enviado!",
                 text: result.message,
                 icon: "success",
                 confirmButtonText: 'Cerrar',
                 confirmButtonColor: '#061D41',
             });
+            form.reset();
         } else {
             Swal.fire({
                 title: "Error",
@@ -214,19 +230,17 @@ form?.addEventListener("submit", async (e) => {
                 icon: "error",
                 confirmButtonText: "Cerrar",
                 confirmButtonColor: "#061D41",
-                        
-                });       
-            }
-            form.reset();
-        }catch (error) {
-            Swal.fire({
-                title: "Error",
-                text: "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
-                icon: "error",  
-                confirmButtonText: 'Cerrar',
-                confirmButtonColor: '#061D41',
-            });
+            });       
         }
-    });
-    
+    } catch (error) {
+        Swal.close();
+        Swal.fire({
+            title: "Error",
+            text: "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+            icon: "error",  
+            confirmButtonText: 'Cerrar',
+            confirmButtonColor: '#061D41',
+        });
+    }
+});
 </script>

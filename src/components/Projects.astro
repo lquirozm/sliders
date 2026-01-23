@@ -24,6 +24,14 @@ import casaSol3 from "../assets/proyectos/5.CASA_SOL/img3.jpg";
 import casaSol4 from "../assets/proyectos/5.CASA_SOL/img4.jpg";
 import casaSol5 from "../assets/proyectos/5.CASA_SOL/img5.jpg";
 import casaSol6 from "../assets/proyectos/5.CASA_SOL/img6.jpg";
+//Casa Hurtado
+import casaHurtado1 from "../assets/proyectos/6.CASA_HURTADO/img1.jpg";
+import casaHurtado2 from "../assets/proyectos/6.CASA_HURTADO/img2.jpg";
+import thumbHurtado from "../assets/proyectos/6.CASA_HURTADO/video_thumb.png";
+//Casa Timmermann
+import casaTimmermann1 from "../assets/proyectos/7.CASA_TIMMERMANN/img1.jpg";
+import casaTimmermann2 from "../assets/proyectos/7.CASA_TIMMERMANN/img2.jpg";
+import thumbTimmermann from "../assets/proyectos/7.CASA_TIMMERMANN/video_thumb.png";
 ---
 
 <section>
@@ -71,7 +79,7 @@ import casaSol6 from "../assets/proyectos/5.CASA_SOL/img6.jpg";
         </a>
       </div>
     </div>
-     <!-- Casa Sol -->
+    <!-- Casa Sol -->
     <div class="proyecto-card" id="casa-sol">
       <h3>CASA SOL</h3>
       <div id="casa-sol-gallery" class="gallery">
@@ -100,7 +108,7 @@ import casaSol6 from "../assets/proyectos/5.CASA_SOL/img6.jpg";
           <span class="overlay">Casa Sol</span>
         </a>
       </div>
-   </div>
+    </div>
     <!-- Casa Horizonte -->
     <div class="proyecto-card" id="casa-horizonte">
       <h3>CASA HORIZONTE</h3>
@@ -137,141 +145,259 @@ import casaSol6 from "../assets/proyectos/5.CASA_SOL/img6.jpg";
         </a>
       </div>
     </div>
+    <!-- Casa Hurtado -->
+    <div class="proyecto-card" id="casa-hurtado">
+      <h3>CASA HURTADO</h3>
+      <div id="casa-hurtado-gallery" class="gallery">
+        <a href={casaHurtado1.src} data-pswp-width="1200" data-pswp-height="800">
+          <img src={casaHurtado1.src} alt="Casa Hurtado" />
+          <span class="overlay">Casa Hurtado</span>
+        </a>
+        <a href={casaHurtado2.src} data-pswp-width="1200" data-pswp-height="800">
+          <img src={casaHurtado2.src} alt="Casa Hurtado" />
+          <span class="overlay">Casa Hurtado</span>
+        </a>
+        <a
+          href="#"
+          data-pswp-width="1200"
+          data-pswp-height="800"
+          data-pswp-type="youtube"
+          data-video-id="-daI4ViMIyA"
+        >
+          <img src={thumbHurtado.src} alt="Video Casa Hurtado" />
+          <span class="overlay">▶ Video Casa Hurtado</span>
+        </a>
+      </div>
+    </div>
+    <!-- Casa Timmermann -->
+    <div class="proyecto-card" id="casa-timmermann">
+      <h3>CASA TIMMERMANN</h3>
+      <div id="casa-timmermann-gallery" class="gallery">
+        <a href={casaTimmermann1.src} data-pswp-width="1200" data-pswp-height="800">
+          <img src={casaTimmermann1.src} alt="Casa Timmermann" />
+          <span class="overlay">Casa Timmermann</span>
+        </a>
+        <a href={casaTimmermann2.src} data-pswp-width="1200" data-pswp-height="800">
+          <img src={casaTimmermann2.src} alt="Casa Timmermann" />
+          <span class="overlay">Casa Timmermann</span>
+        </a>
+        <a
+          href="#"
+          data-pswp-width="1200"
+          data-pswp-height="800"
+          data-pswp-type="youtube"
+          data-video-id="pyPTZadLCmU"
+        >
+          <img src={thumbTimmermann.src} alt="Video Casa Timmermann" />
+          <span class="overlay">▶ Video Casa Timmermann</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<style>
-  section {
-    padding: 60px 15px;
-    width: 100%;
-    margin-top: 100px;
-    /* background-color: var(--light-blue); */
-    box-sizing: border-box;
-    background-image: url("/images/fondo3.png");
-    background-repeat: repeat;
-    background-size: auto;
-    background-position: center center;
-  }
+  <style>
+    section {
+      padding: 60px 15px;
+      width: 100%;
+      margin-top: 100px;
+      /* background-color: var(--light-blue); */
+      box-sizing: border-box;
+      background-image: url("/images/fondo3.png");
+      background-repeat: repeat;
+      background-size: auto;
+      background-position: center center;
+    }
 
-  h2 {
-    font-family: var(--cocogoose-light);
-    font-size: 2.5rem;
-    margin: 0;
-    color: var(--light-blue);
-    text-align: center;
-  }
+    h2 {
+      font-family: var(--cocogoose-light);
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--light-blue);
+      text-align: center;
+    }
 
-  h3 {
-    font-family: var(--helvetica-regular);
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: var(--dark-blue);
-  }
+    h3 {
+      font-family: var(--helvetica-regular);
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--dark-blue);
+    }
 
-  .line {
-    height: 4px;
-    background: var(--light-blue);
-    margin: 20px auto 50px auto;
-    width: 120px;
-  }
+    .line {
+      height: 4px;
+      background: var(--light-blue);
+      margin: 20px auto 50px auto;
+      width: 120px;
+    }
 
-  .proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 50px;
-  }
-
-  .proyecto-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    padding: 25px 15px;
-    transition: transform 0.3s ease;
-  }
-
-  .proyecto-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  @media (min-width: 900px) {
-   
     .proyectos-grid {
-      grid-template-columns: repeat(2, minmax(400px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 50px;
     }
+
+    .proyecto-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      padding: 25px 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .proyecto-card:hover {
+      transform: translateY(-5px);
+    }
+
     .gallery {
-      grid-template-columns: repeat(2, 1fr);
-
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
+    .pswp__video-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      padding: 5px;
+      box-sizing: border-box;
   }
+  
+    .pswp__video-container iframe {
+      width: 100%;
+      height: 100%;
+      max-width: 95vw;
+      max-height: 85vh;
+      aspect-ratio: 16/9;
+    }
+    @media (min-width: 900px) {
+      .proyectos-grid {
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
+      }
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pswp__video-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      
+      .pswp__video-container iframe {
+        width: 100%;
+        height: 100%;
+        max-width: 85vw;
+        max-height: 85vh;
+        aspect-ratio: 16/9;
+      }
+    }
 
-  .gallery a {
-    position: relative;
-    display: block;
-    border-radius: 5px;
-    overflow: hidden;
-  }
+    .gallery a {
+      position: relative;
+      display: block;
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-  .gallery img {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-  }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .gallery a:hover img {
-    transform: scale(1.05);
-    filter: brightness(0.8);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
-  }
+    .gallery a:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
 
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    font-size: 1.1rem;
-    font-family: var(--helvetica-regular);
-    padding: 10px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s ease;
-  }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 1.1rem;
+      font-family: var(--helvetica-regular);
+      padding: 10px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+    }
 
-  .gallery a:hover .overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
+    .gallery a:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 
-<script>
-  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  <script>
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const galleries = [
-      "#casa-abulia-gallery",
-      "#casa-horizonte-gallery",
-      "#casa-lienzo-gallery",
-      "#casa-p-gallery",
-      "#casa-sol-gallery",
-    ];
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleries = [
+        "#casa-abulia-gallery",
+        "#casa-horizonte-gallery",
+        "#casa-lienzo-gallery",
+        "#casa-p-gallery",
+        "#casa-sol-gallery",
+        "#casa-hurtado-gallery",
+        "#casa-timmermann-gallery",
+      ];
 
-    galleries.forEach((selector) => {
-      const lightbox = new PhotoSwipeLightbox({
-        gallery: selector,
-        children: "a",
-        pswpModule: () => import("photoswipe"),
+      galleries.forEach((selector) => {
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: selector,
+          children: "a",
+          pswpModule: () => import("photoswipe"),
+        });
+
+        // Manejar contenido de YouTube
+      lightbox.on('contentLoad', (e) => {
+        const { content } = e;
+        
+        if (content.data.element && content.data.element.dataset.pswpType === 'youtube') {
+          e.preventDefault();
+          
+          const videoId = content.data.element.dataset.videoId;
+          
+          content.element = document.createElement('div');
+          content.element.className = 'pswp__video-container';
+          content.element.innerHTML = `
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              style="max-width: 100%; max-height: 100%;"
+            ></iframe>
+          `;
+        }
       });
+
+      // Prevenir navegación al hacer clic en videos
+      lightbox.on('contentActivate', ({ content }) => {
+        if (content.data.element && content.data.element.dataset.pswpType === 'youtube') {
+          content.data.element.addEventListener('click', (e) => {
+            e.preventDefault();
+          });
+        }
+      });
+
       lightbox.init();
     });
   });
-</script>
+  </script>

@@ -275,6 +275,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (navLinks) {
         navLinks.classList.toggle("active");
       }
+      const menuOptions = document.querySelectorAll(".nav-links ul li a");
+      menuOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          if (navLinks) {
+            navLinks.classList.remove("active");
+          }
+        });
+      });
     });
   }
   

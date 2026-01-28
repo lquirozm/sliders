@@ -181,7 +181,7 @@ import imgCasaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg";
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination, Thumbs, FreeMode } from "swiper/modules";
+  import { Navigation, Pagination, Thumbs, FreeMode, Autoplay } from "swiper/modules";
 
   // Canvas pool para reutilización y mejor performance
   const canvasPool = {
@@ -379,9 +379,10 @@ import imgCasaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg";
   });
 
   const swiper2 = new Swiper(".mySwiper2", {
-    modules: [Pagination, Navigation, Thumbs, FreeMode],
+    modules: [Pagination, Navigation, Thumbs, FreeMode, Autoplay],
     spaceBetween: 10,
     speed: 400,
+    autoplay: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

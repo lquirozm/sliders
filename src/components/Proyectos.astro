@@ -1,0 +1,292 @@
+---
+import 'photoswipe/style.css';
+import { proyectos } from "../data/proyectos.js";
+---
+
+<section id="proyectos">
+  <h2>PROYECTOS</h2>
+  <div class="line"></div>
+
+  <div class="proyectos-grid">
+  {proyectos.map((proyecto) => (
+    /* Cada tarjeta es ahora un contenedor de galería independiente */
+    <div class="proyecto-card gallery-container">
+      <a
+        href={proyecto.imagenPrincipal}
+        data-pswp-width="1200" 
+        data-pswp-height="800"
+        class="proyecto-link"
+      >
+        <img src={proyecto.imagenPrincipal} alt={proyecto.nombre} />
+        <div class="proyecto-overlay">
+          <h3>{proyecto.nombre}</h3>
+          <span class="ver-galeria">Ver galería →</span>
+        </div>
+      </a>
+      
+      {/* Imágenes secundarias del mismo proyecto */}
+      <div style="display:none">
+        {proyecto.galeria.slice(1).map((item) => (
+          item.type === "image" ? (
+          <a 
+            href={item.src} 
+            data-pswp-width="1200" 
+            data-pswp-height="800" 
+          />
+        ): (
+          <a 
+            href={item.src} 
+            data-pswp-width="1200"
+            data-pswp-height="800"
+            data-pswp-type="youtube"
+          />
+        )
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+</section>
+
+<style>
+  section {
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("/images/fondo3.png");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center center;
+  }
+
+  h2 {
+    font-family: var(--cocogoose-light);
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--light-blue);
+    text-align: start;
+  }
+
+  .line {
+    height: 4px;
+    background: var(--light-blue);
+    margin: 20px auto 50px 0px;
+    width: 320px;
+  }
+
+  .proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .proyecto-card {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .proyecto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .proyecto-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;  
+}
+
+  .proyecto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .proyecto-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .proyecto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 60%,
+      transparent 100%
+    );
+    padding: 20px 20px 5px;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  .proyecto-card:hover .proyecto-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.7) 60%,
+      transparent 100%
+    );
+  }
+
+  h3 {
+    font-family: var(--helvetica-regular);
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    opacity: 0.85;
+  }
+
+  .ver-galeria {  
+    font-family: var(--helvetica-regular);
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    display: none;
+  }
+
+  .proyecto-card:hover .ver-galeria {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  .pswp__youtube-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+  .pswp__youtube-container iframe {
+    max-width: 90vw;
+    max-height: 80vh;
+    aspect-ratio: 16 / 9;
+  }
+ 
+  @media (min-width: 768px) {
+    section {
+      padding: 100px 40px;
+    }
+    .proyectos-grid {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    h3{
+      font-size: 1.4rem;
+    }
+    .proyecto-overlay{
+      padding: 30px 20px 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .proyectos-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    h3{
+      font-size: 1.4rem;
+
+    }
+    section {
+      padding: 120px 60px;
+    }
+    h2{
+      font-size: 3rem;
+      margin-left: 100px;
+    }
+    .line {
+      width: 700px;
+      margin: 20px auto 50px 100px;
+    }
+    .proyectos-grid {
+      gap: 25px;
+    }
+    .ver-galeria {
+      font-family: var(--helvetica-regular);
+      font-size: 0.9rem;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+  }
+</style>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+  const initPhotoSwipe = () => {
+    const containers = document.querySelectorAll('.gallery-container');
+
+    containers.forEach((container: any) => {
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: container,
+        children: 'a',
+        pswpModule: () => import('photoswipe'),
+      });
+
+      lightbox.addFilter('itemData', (itemData) => {
+        const type = itemData?.element?.dataset.pswpType;
+        if (type === 'youtube') {
+          itemData.type = 'youtube';
+        }
+        return itemData;
+      });
+
+      // Constructor del contenido (Iframe de YouTube)
+      lightbox.on('contentLoad', (e) => {
+        const { content } = e;
+        if (content.type === 'youtube') {
+          e.preventDefault();
+
+          // Función para extraer el ID de YouTube
+          const url = content.data.src;
+          const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+          const match = url?.match(regExp);
+          const videoId = (match && match[2].length === 11) ? match[2] : null;
+
+          const container = document.createElement('div');
+          container.className = 'pswp__youtube-container';
+          
+          if (videoId) {
+            container.innerHTML = `
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>`;
+          } else {
+            container.innerHTML = '<p style="color:white">Video no encontrado</p>';
+          }
+
+          content.element = container;
+        }
+      });
+
+      lightbox.init();
+    });
+  };
+
+  initPhotoSwipe();
+  document.addEventListener('astro:page-load', initPhotoSwipe);
+</script>

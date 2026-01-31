@@ -1,5 +1,3 @@
-
-import "glightbox/dist/css/glightbox.min.css";
 // Casa Abuila
 import casaAbuila1 from "../assets/proyectos/1.CASA_ABULIA/img1.jpg";
 import casaAbuila2 from "../assets/proyectos/1.CASA_ABULIA/img2.jpg";

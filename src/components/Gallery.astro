@@ -16,23 +16,27 @@ import imgCasaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg";
   <div class="swiper mySwiper2">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src={imgAbuila1.src} alt="Proyecto Casa Abuila"/>
+        <img src={imgAbuila1.src} alt="Proyecto Casa Abuila" loading="eager" />
         <span class="slide-title">CASA ABUILA</span>
       </div>
       <div class="swiper-slide">
-        <img src={imgHorizonte1.src} alt="Proyecto Casa Horizonte"/>
+        <img src={imgHorizonte1.src} alt="Proyecto Casa Horizonte" loading="lazy"/>
+        <div class="swiper-lazy-preloader"></div>
         <span class="slide-title">CASA HORIZONTE</span>
       </div>
       <div class="swiper-slide">
-        <img src={imgLienzo1.src} alt="Proyecto Casa lienzo"/>
+        <img src={imgLienzo1.src} alt="Proyecto Casa lienzo" loading="lazy"/>
+        <div class="swiper-lazy-preloader"></div>
         <span class="slide-title">CASA LIENZO</span>
       </div>
       <div class="swiper-slide">
-        <img src={imgCasaP2.src} alt="Proyecto Casa P"/>
+        <img src={imgCasaP2.src} alt="Proyecto Casa P" loading="lazy"/>
+        <div class="swiper-lazy-preloader"></div>
         <span class="slide-title">CASA P</span>
       </div>
       <div class="swiper-slide">
-        <img src={imgCasaSol1.src} alt="Proyecto Casa Sol"/>
+        <img src={imgCasaSol1.src} alt="Proyecto Casa Sol" loading="lazy"/>
+        <div class="swiper-lazy-preloader"></div>
         <span class="slide-title">CASA SOL</span>
       </div>
     </div>
@@ -381,8 +385,12 @@ import imgCasaSol1 from "../assets/proyectos/5.CASA_SOL/img1.jpg";
   const swiper2 = new Swiper(".mySwiper2", {
     modules: [Pagination, Navigation, Thumbs, FreeMode, Autoplay],
     spaceBetween: 10,
-    speed: 400,
-    autoplay: true,
+    speed: 600,
+    loop: true,   
+    autoplay:{
+      delay: 6000,
+      disableOnInteraction: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

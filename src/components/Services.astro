@@ -1,5 +1,6 @@
 ---
 import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
+import Image from "astro/components/Image.astro";
 ---
 
 <section id="Servicios" class="services-section">
@@ -31,7 +32,7 @@ import imgHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
       </div>
     </div>
     <div class="services-image" >
-        <img src={imgHorizonte1.src} alt="Proyecto Casa Horizonte" loading="lazy"/>
+        <Image src={imgHorizonte1} alt="Proyecto Casa Horizonte" loading="lazy"/>
     </div>
   </article>
 </section>

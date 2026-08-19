@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^11.0.5",
     "@vercel/speed-insights": "^2.0.0",
     "astro": "^5.13.7",
     "photoswipe": "^5.4.4",

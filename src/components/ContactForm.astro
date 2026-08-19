@@ -180,8 +180,6 @@
 <script>
 import Swal from "sweetalert2";
 
-const apiUrl = import.meta.env.PUBLIC_API_URL;
-
 const form = document.getElementById("emailForm") as HTMLFormElement;
 
 form?.addEventListener("submit", async (e) => {
@@ -201,7 +199,7 @@ form?.addEventListener("submit", async (e) => {
     });
 
     try {
-        const res = await fetch(apiUrl, {
+        const res = await fetch("/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

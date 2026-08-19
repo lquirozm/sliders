@@ -3,13 +3,13 @@ import casaAbuila1 from "../assets/proyectos/1.CASA_ABULIA/img1.jpg";
 import casaAbuila2 from "../assets/proyectos/1.CASA_ABULIA/img2.jpg";
 import casaAbuila3 from "../assets/proyectos/1.CASA_ABULIA/img3.jpg";
 // Casa Horizonte
-// import casaHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
-// import casaHorizonte2 from "../assets/proyectos/2.CASA_HORIZONTE/img2.jpg";
-// import casaHorizonte3 from "../assets/proyectos/2.CASA_HORIZONTE/img3.jpg";
+import casaHorizonte1 from "../assets/proyectos/2.CASA_HORIZONTE/img1.jpg";
+import casaHorizonte2 from "../assets/proyectos/2.CASA_HORIZONTE/img2.jpg";
+import casaHorizonte3 from "../assets/proyectos/2.CASA_HORIZONTE/img3.jpg";
 // Casa Lienzo
-import casaLienzo1 from "../assets/proyectos/3.CASA_LIENZO/img1.jpg";
-import casaLienzo2 from "../assets/proyectos/3.CASA_LIENZO/img2.png";
-import casaLienzo3 from "../assets/proyectos/3.CASA_LIENZO/img3.png";
+// import casaLienzo1 from "../assets/proyectos/3.CASA_LIENZO/img1.jpg";
+// import casaLienzo2 from "../assets/proyectos/3.CASA_LIENZO/img2.png";
+// import casaLienzo3 from "../assets/proyectos/3.CASA_LIENZO/img3.png";
 // Casa P
 import casaP1 from "../assets/proyectos/4.CASA_P/img1.jpg";
 import casaP2 from "../assets/proyectos/4.CASA_P/img2.jpg";
@@ -67,26 +67,26 @@ export const proyectos = [
       { src: casaSol6.src, type: "image" },
     ],
   },
+  {
+     id: "casa-horizonte",
+     nombre: "CASA HORIZONTE",
+     imagenPrincipal: casaHorizonte1.src,
+     galeria: [
+       { src: casaHorizonte1.src, type: "image" },
+       { src: casaHorizonte2.src, type: "image" },
+       { src: casaHorizonte3.src, type: "image" },
+     ],
+   },
   // {
-  //   id: "casa-horizonte",
-  //   nombre: "CASA HORIZONTE",
-  //   imagenPrincipal: casaHorizonte1.src,
+  //   id: "casa-lienzo",
+  //   nombre: "CASA LIENZO",
+  //   imagenPrincipal: casaLienzo1.src,
   //   galeria: [
-  //     { src: casaHorizonte1.src, type: "image" },
-  //     { src: casaHorizonte2.src, type: "image" },
-  //     { src: casaHorizonte3.src, type: "image" },
+  //     { src: casaLienzo1.src, type: "image" },
+  //     { src: casaLienzo2.src, type: "image" },
+  //     { src: casaLienzo3.src, type: "image" },
   //   ],
   // },
-  {
-    id: "casa-lienzo",
-    nombre: "CASA LIENZO",
-    imagenPrincipal: casaLienzo1.src,
-    galeria: [
-      { src: casaLienzo1.src, type: "image" },
-      { src: casaLienzo2.src, type: "image" },
-      { src: casaLienzo3.src, type: "image" },
-    ],
-  },
   {
     id: "casa-hurtado",
     nombre: "CASA HURTADO",
